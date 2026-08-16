@@ -37,7 +37,6 @@
 ```text
 financial-dashboard/
 ├── .github/workflows/ci.yml       # Pipeline CI de lint, tests y build
-├── docs/screenshots/               # Capturas reales del dashboard
 ├── database/                       # Modelo teórico MySQL 8.4
 ├── src/
 │   ├── components/                 # Layout, UI y módulos financieros
