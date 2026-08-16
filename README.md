@@ -48,8 +48,6 @@ financial-dashboard/
 │   ├── utils/                      # Cálculos y agregaciones financieras
 │   ├── App.tsx                     # Shell de la aplicación
 │   └── styles.css                  # Tokens y estilos responsive
-├── BLUEPRINT.md                    # Roadmap y especificación del proyecto
-├── DECISIONS.md                    # Registro de decisiones de arquitectura
 ├── index.html                      # Entrada HTML
 └── package.json                    # Scripts y dependencias
 ```
