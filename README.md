@@ -1,7 +1,7 @@
 # Finora — Dashboard Financiero Corporativo
 
-[![CI Pipeline](https://github.com/alxnrocha/12-financial-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/alxnrocha/12-financial-dashboard/actions)
-[![Demo GitHub Pages](https://img.shields.io/badge/Demo-GitHub_Pages-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://alxnrocha.github.io/12-financial-dashboard/)
+[![CI Pipeline](https://github.com/alxnrocha/financial-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/alxnrocha/financial-dashboard/actions)
+[![Demo GitHub Pages](https://img.shields.io/badge/Demo-GitHub_Pages-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://alxnrocha.github.io/financial-dashboard/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8.svg)](https://tailwindcss.com/)
@@ -9,8 +9,8 @@
 
 **Finora** es una SPA de gestión financiera B2B para equipos directivos que necesitan consultar flujo de caja, centros de coste, previsiones, presupuestos y resultados operativos desde una única vista analítica.
 
-- 🌐 **Demo en Vivo (GitHub Pages):** [https://alxnrocha.github.io/12-financial-dashboard/](https://alxnrocha.github.io/12-financial-dashboard/)
-- 📦 **Repositorio GitHub:** [https://github.com/alxnrocha/12-financial-dashboard](https://github.com/alxnrocha/12-financial-dashboard)
+- 🌐 **Demo en Vivo (GitHub Pages):** [https://alxnrocha.github.io/financial-dashboard/](https://alxnrocha.github.io/financial-dashboard/)
+- 📦 **Repositorio GitHub:** [https://github.com/alxnrocha/financial-dashboard](https://github.com/alxnrocha/financial-dashboard)
 
 ---
 
@@ -35,7 +35,7 @@
 ## 🏛️ Estructura del Proyecto
 
 ```text
-12-financial-dashboard/
+financial-dashboard/
 ├── .github/workflows/ci.yml       # Pipeline CI de lint, tests y build
 ├── docs/screenshots/               # Capturas reales del dashboard
 ├── database/                       # Modelo teórico MySQL 8.4
@@ -61,8 +61,8 @@
 ### 1. Clonar e Instalar
 
 ```bash
-git clone https://github.com/alxnrocha/12-financial-dashboard.git
-cd 12-financial-dashboard
+git clone https://github.com/alxnrocha/financial-dashboard.git
+cd financial-dashboard
 npm install
 ```
 

@@ -23,11 +23,13 @@
 
 ## 4. Milestones y Desglose de Issues
 
-### 🏗️ Milestone 1 — Project Foundation (1/1)
+### 🏗️ Milestone 1 — Project Foundation (1/3)
 
-- [ ] **Issue #1:** `Set up initial project structure`
+- [x] **Issue #1:** `Set up initial project structure`
+- [ ] **Issue #13:** `Configure domain selectors and financial store`
+- [ ] **Issue #14:** `Implement account and category management views`
 
-### ⚙️ Milestone 2 — Core Features (0/6)
+### ⚙️ Milestone 2 — Core Features (0/9)
 
 - [ ] **Issue #2:** `Model financial domain data and mock fixtures`
 - [ ] **Issue #3:** `Build executive metrics overview`
@@ -36,15 +38,20 @@
 - [ ] **Issue #6:** `Implement financial transactions table`
 - [ ] **Issue #7:** `Build management income statement report`
 - [ ] **Issue #8:** `Add budget versus actual analysis`
+- [ ] **Issue #15:** `Add cash flow aggregation and forecast rules`
+- [ ] **Issue #16:** `Implement dashboard navigation and view state`
 
-### 🧪 Milestone 3 — Interactions and Quality (0/2)
+### 🧪 Milestone 3 — Interactions and Quality (0/4)
 
 - [ ] **Issue #9:** `Add financial rules test suite`
 - [ ] **Issue #10:** `Audit accessibility and responsive behavior`
+- [ ] **Issue #17:** `Add period filters and interaction states`
+- [ ] **Issue #18:** `Add CI coverage and test reporting`
 
-### 🚀 Milestone 4 — Documentation and Release (0/1)
+### 🚀 Milestone 4 — Documentation and Release (0/2)
 
 - [ ] **Issue #11:** `Prepare documentation and release`
+- [ ] **Issue #19:** `Publish screenshots and production release`
 
 ## 5. Interfaces Clave
 
