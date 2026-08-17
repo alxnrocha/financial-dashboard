@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import {
   AccountsView,
   BudgetVarianceAnalysis,
   CashFlowChart,
   CostCenterBreakdown,
   ExecutiveMetrics,
+  ExportModal,
   Header,
   IncomeStatementTable,
   Sidebar,
@@ -12,6 +14,8 @@ import {
 import { useFinancialStore } from './store/useFinancialStore'
 
 function App() {
+  const [isExportOpen, setIsExportOpen] = useState(false)
+
   const {
     activeTab,
     setActiveTab,
@@ -68,7 +72,12 @@ function App() {
                     <CostCenterBreakdown costCenters={costCenters} currency={currency} />
                   </div>
                 </div>
-                <TransactionsTable transactions={transactions} currency={currency} />
+                <TransactionsTable
+                  transactions={transactions}
+                  currency={currency}
+                  onExportCSV={() => setIsExportOpen(true)}
+                  onExportPDF={() => setIsExportOpen(true)}
+                />
               </>
             )}
 
@@ -79,6 +88,7 @@ function App() {
                   rows={incomeStatement}
                   currency={currency}
                   periodLabel="For the period Jan 1 – Mar 31, 2024"
+                  onExportReport={() => setIsExportOpen(true)}
                 />
               </>
             )}
@@ -86,7 +96,12 @@ function App() {
             {activeTab === 'cashflow' && (
               <>
                 <CashFlowChart data={cashFlowPoints} currency={currency} />
-                <TransactionsTable transactions={transactions} currency={currency} />
+                <TransactionsTable
+                  transactions={transactions}
+                  currency={currency}
+                  onExportCSV={() => setIsExportOpen(true)}
+                  onExportPDF={() => setIsExportOpen(true)}
+                />
               </>
             )}
 
@@ -115,12 +130,24 @@ function App() {
                   rows={incomeStatement}
                   currency={currency}
                   periodLabel="Corporate Audit & Reconciliation Statement"
+                  onExportReport={() => setIsExportOpen(true)}
                 />
-                <TransactionsTable transactions={transactions} currency={currency} />
+                <TransactionsTable
+                  transactions={transactions}
+                  currency={currency}
+                  onExportCSV={() => setIsExportOpen(true)}
+                  onExportPDF={() => setIsExportOpen(true)}
+                />
               </div>
             )}
           </main>
         </div>
+
+        {/* Global Export Modal */}
+        <ExportModal
+          isOpen={isExportOpen}
+          onClose={() => setIsExportOpen(false)}
+        />
       </div>
     </div>
   )
