@@ -1,13 +1,14 @@
-# Finora — Dashboard Financiero Corporativo
+# FinFlow B2B — Dashboard Financiero Corporativo & CFO Intelligence
 
 [![CI Pipeline](https://github.com/alxnrocha/financial-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/alxnrocha/financial-dashboard/actions)
 [![Demo GitHub Pages](https://img.shields.io/badge/Demo-GitHub_Pages-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://alxnrocha.github.io/financial-dashboard/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8.svg)](https://tailwindcss.com/)
+[![Zustand](https://img.shields.io/badge/State-Zustand_5-orange.svg)](https://zustand.docs.pmnd.rs/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-**Finora** es una SPA de gestión financiera B2B para equipos directivos que necesitan consultar flujo de caja, centros de coste, previsiones, presupuestos y resultados operativos desde una única vista analítica.
+**FinFlow** es una plataforma SPA corporativa de inteligencia financiera diseñada para directores financieros (CFO) y equipos de operaciones B2B. Permite consolidar estados de resultados (DRE), proyectar flujo de caja, monitorear desvíos presupuestarios por centro de costo y auditar transacciones con soporte multimoneda y multi-entidad.
 
 - 🌐 **Demo en Vivo (GitHub Pages):** [https://alxnrocha.github.io/financial-dashboard/](https://alxnrocha.github.io/financial-dashboard/)
 - 📦 **Repositorio GitHub:** [https://github.com/alxnrocha/financial-dashboard](https://github.com/alxnrocha/financial-dashboard)
@@ -16,40 +17,82 @@
 
 ## ✨ Características Principales
 
-### 🚀 Experiencia de Usuario & Frontend
-
-- **Visión ejecutiva:** saldo disponible, entradas, salidas, beneficio neto y meses de autonomía.
-- **Proyección de flujo de caja:** gráfico interactivo con periodos de tres meses, seis meses y un año.
-- **Distribución por centros de coste:** desglose visual de Marketing, I+D, Operaciones, Ventas y G&A.
-- **Tabla de transacciones:** búsqueda, filtros, estados de pago y acciones de exportación.
-- **Diseño responsive:** experiencia adaptada a escritorio, tablet y dispositivos inferiores a 520px.
-
-### 📊 Dominio Financiero
-
-- Agregaciones por periodo para ingresos, gastos y beneficio operativo.
-- Comparativa prevista frente a realizada por categoría.
-- Modelo preparado para cuentas, categorías, centros de coste, transacciones y presupuestos.
+### 🚀 Inteligencia Financiera & Frontend
+- **DRE Gerencial (Income Statement):** Estructura contable jerárquica con filas expandibles (Gross Revenue -> Deductions -> Net Revenue -> COGS -> Gross Profit -> OPEX [Sales & Mkt, R&D, G&A] -> EBITDA -> EBIT) con cálculo de variaciones nominales y porcentuales.
+- **Resumen Ejecutivo de KPIs:** Métricas en tiempo real de ingresos netos, gastos operativos (OPEX), margen EBITDA (45.4%), runway de caja en meses y ritmo de crecimiento interanual.
+- **Proyección de Flujo de Caja:** Gráfico de área dual en Recharts con saldo histórico y modelos predictivos a 30 días con filtros temporales (1M, 3M, 6M, 1Y, YTD).
+- **Desglose de Centros de Costo:** Gráfico circular (donut) interactivo con cálculo de cuota de gasto y barras de consumo de presupuesto.
+- **Control Presupuestario (Budget vs Actual):** Detección de sobregastos con alertas visuales de desviación e indicadores de holgura de capital.
+- **Gestión de Cuentas y Tesorería:** Supervisión de bóvedas bancarias conectadas (SVB, JPMorgan, Wise) con creación dinámica de cuentas.
+- **Tabla de Auditoría de Transacciones:** Tabla interactiva construida con TanStack Table v8, ordenación multicolumna, filtros por estado (`cleared`, `pending`, `overdue`, `reconciled`), paginación y búsqueda global.
+- **Centro de Exportación:** Modal para descarga de reportes ejecutivos en PDF, CSV y Excel (XLSX).
 
 ---
 
-## 🏛️ Estructura del Proyecto
+## 🏛️ Arquitectura & Modelo de Datos (MySQL 8.4 DDL)
 
-```text
-financial-dashboard/
-├── .github/workflows/ci.yml       # Pipeline CI de lint, tests y build
-├── database/                       # Modelo teórico MySQL 8.4
-├── src/
-│   ├── components/                 # Layout, UI y módulos financieros
-│   ├── data/                       # Fixtures y datos mock-first
-│   ├── pages/                      # Vistas principales del dashboard
-│   ├── store/                      # Estado global Zustand
-│   ├── types/                      # Tipos del dominio financiero
-│   ├── utils/                      # Cálculos y agregaciones financieras
-│   ├── App.tsx                     # Shell de la aplicación
-│   └── styles.css                  # Tokens y estilos responsive
-├── index.html                      # Entrada HTML
-└── package.json                    # Scripts y dependencias
+```mermaid
+erDiagram
+    ACCOUNTS ||--o{ TRANSACTIONS : contains
+    CATEGORIES ||--o{ TRANSACTIONS : categorizes
+    COST_CENTERS ||--o{ TRANSACTIONS : allocated_to
+    CATEGORIES ||--o{ BUDGETS : budgets_for
+    COST_CENTERS ||--o{ BUDGETS : monitors
+
+    ACCOUNTS {
+        varchar id PK
+        varchar name
+        enum type "checking, savings, investment, credit"
+        varchar bank_name
+        varchar currency
+        decimal balance
+    }
+    COST_CENTERS {
+        varchar id PK
+        varchar code UK
+        varchar name
+        varchar manager
+        decimal allocated_budget
+        decimal current_spent
+    }
+    CATEGORIES {
+        varchar id PK
+        varchar code UK
+        varchar name
+        enum type "revenue, expense, deduction, cogs"
+    }
+    TRANSACTIONS {
+        varchar id PK
+        varchar account_id FK
+        varchar category_id FK
+        varchar cost_center_id FK
+        decimal amount
+        enum type "inflow, outflow"
+        date date
+        enum status "cleared, pending, overdue, reconciled"
+    }
+    BUDGETS {
+        varchar id PK
+        varchar category_id FK
+        varchar cost_center_id FK
+        tinyint month
+        smallint year
+        decimal allocated_amount
+        decimal actual_spent
+    }
 ```
+
+---
+
+## 🛠️ Stack Tecnológico
+
+- **Frontend Core:** React 19, TypeScript 5.7, Vite 8.2.
+- **Estilos & Diseño:** Tailwind CSS v4, Lucide React (iconografía SVG accesible), Google Fonts (Inter).
+- **Visualización de Datos:** Recharts 3 (Gráficos compuestos de flujo y distribución Donut).
+- **Tablas Avanzadas:** TanStack Table v8 (Data grid con filtrado reactivo y ordenación).
+- **Estado Global:** Zustand 5 con selectores de dominio y mutadores atómicos.
+- **Calidad & Pruebas:** Vitest (26 pruebas unitarias de reglas financieras), Oxlint (linter de alta velocidad).
+- **Base de Datos Teórica:** MySQL 8.4 LTS (`database/schema.sql` y `database/seed.sql`).
 
 ---
 
@@ -73,16 +116,16 @@ La aplicación estará disponible en [http://localhost:5173](http://localhost:51
 
 ---
 
-## 🧪 Calidad de Código y Pruebas Automatizadas
+## 🧪 Pruebas Automatizadas y Calidad
 
 ```bash
-# Ejecutar las pruebas unitarias
+# Ejecutar suite de pruebas unitarias financieras
 npm test
 
-# Ejecutar el análisis estático
+# Ejecutar análisis estático con Oxlint
 npm run lint
 
-# Compilar para producción
+# Compilar paquete de producción
 npm run build
 ```
 
@@ -90,6 +133,6 @@ npm run build
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulte el archivo [LICENSE](./LICENSE) para más detalles.
+Distribuido bajo la Licencia MIT. Consulte el archivo [LICENSE](./LICENSE) para más información.
 
 **Autor:** [Alexandre Rocha](https://github.com/alxnrocha)
