@@ -1,17 +1,16 @@
 # FinFlow B2B — Dashboard Financiero Corporativo & CFO Intelligence
 
-[![CI Pipeline](https://github.com/alxnrocha/financial-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/alxnrocha/financial-dashboard/actions)
-[![Demo GitHub Pages](https://img.shields.io/badge/Demo-GitHub_Pages-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://alxnrocha.github.io/financial-dashboard/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8.svg)](https://tailwindcss.com/)
-[![Zustand](https://img.shields.io/badge/State-Zustand_5-orange.svg)](https://zustand.docs.pmnd.rs/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-success?style=flat-square&logo=github&logoColor=white)](https://alxnrocha.github.io/financial-dashboard/)
+[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Recharts](https://img.shields.io/badge/Recharts-2.15-22C55E?style=flat-square)](https://recharts.org/)
+[![Zustand](https://img.shields.io/badge/Zustand-5.0-4338CA?style=flat-square)](https://github.com/pmndrs/zustand)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-**FinFlow** es una plataforma SPA corporativa de inteligencia financiera diseñada para directores financieros (CFO) y equipos de operaciones B2B. Permite consolidar estados de resultados (DRE), proyectar flujo de caja, monitorear desvíos presupuestarios por centro de costo y auditar transacciones con soporte multimoneda y multi-entidad.
-
-- 🌐 **Demo en Vivo (GitHub Pages):** [https://alxnrocha.github.io/financial-dashboard/](https://alxnrocha.github.io/financial-dashboard/)
-- 📦 **Repositorio GitHub:** [https://github.com/alxnrocha/financial-dashboard](https://github.com/alxnrocha/financial-dashboard)
+> **Proyecto 12 del Portafolio Profesional** — Plataforma SPA corporativa de analítica financiera, DRE gerencial, proyección de flujo de caja y control presupuestario para directores financieros (CFO) y operaciones B2B.  
+> 🔗 **Demo en Vivo en GitHub Pages:** [https://alxnrocha.github.io/financial-dashboard/](https://alxnrocha.github.io/financial-dashboard/)
 
 ---
 
