@@ -1,41 +1,24 @@
 # FinFlow B2B — Dashboard Financiero Corporativo & CFO Intelligence
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-success?style=flat-square&logo=github&logoColor=white)](https://alxnrocha.github.io/financial-dashboard/)
-[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![SQL DDL](https://img.shields.io/badge/SQL-DDL_&_Relational_Schema-00758F?style=flat-square&logo=sqlite&logoColor=white)](https://www.mysql.com/)
-[![Recharts](https://img.shields.io/badge/Recharts-2.15-22C55E?style=flat-square)](https://recharts.org/)
-[![Zustand](https://img.shields.io/badge/Zustand-5.0-4338CA?style=flat-square)](https://github.com/pmndrs/zustand)
-[![Tested with Vitest](https://img.shields.io/badge/Tested_with-Vitest-FCC72B?style=flat-square&logo=vitest&logoColor=black)](https://vitest.dev/)
-[![Oxlint](https://img.shields.io/badge/Linter-Oxlint-orange?style=flat-square)](https://oxc.rs/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+<div align="center">
 
-> **Proyecto 12 del Portafolio Profesional** — Plataforma SPA corporativa de analítica financiera, DRE gerencial, proyección de flujo de caja y control presupuestario para directores financieros (CFO) y operaciones B2B.  
-> 🔗 **Demo en Vivo en GitHub Pages:** [https://alxnrocha.github.io/financial-dashboard/](https://alxnrocha.github.io/financial-dashboard/)
+![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-5.0-4338CA?style=for-the-badge)
+![Recharts](https://img.shields.io/badge/Recharts-2.15-22C55E?style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vitest](https://img.shields.io/badge/Tested_with-Vitest-FCC72B?style=for-the-badge&logo=vitest&logoColor=black)
+![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-22C55E?style=for-the-badge&logo=github&logoColor=white)
 
----
+**Plataforma SPA corporativa de inteligencia financiera, DRE gerencial jerárquico, proyección de flujo de caja y control presupuestario por centros de costo para directores financieros (CFO).**
 
-## 🌟 Visión General & Propuesta de Valor
+[🚀 Demo en Vivo](https://alxnrocha.github.io/financial-dashboard/) • [📂 Repositorio en GitHub](https://github.com/alxnrocha/financial-dashboard)
 
-**FinFlow** es una plataforma SPA corporativa de inteligencia financiera diseñada para directores financieros (CFO) y equipos de operaciones B2B.
-
-Permite consolidar estados de resultados (DRE), proyectar flujo de caja, monitorear desvíos presupuestarios por centro de costo y auditar transacciones con soporte multimoneda y multi-entidad.
+</div>
 
 ---
 
-## ✨ Características Principales
-
-- **DRE Gerencial (Income Statement):** Estructura contable jerárquica con filas expandibles (Gross Revenue -> Deductions -> Net Revenue -> COGS -> Gross Profit -> OPEX -> EBITDA -> EBIT) con cálculo de variaciones nominales y porcentuales.
-- **Resumen Ejecutivo de KPIs:** Métricas en tiempo real de ingresos netos, gastos operativos (OPEX), margen EBITDA (45.4%), runway de caja y ritmo de crecimiento.
-- **Proyección de Flujo de Caja:** Gráfico de área dual en Recharts con saldo histórico y modelos predictivos a 30 días con filtros temporales.
-- **Desglose de Centros de Costo:** Gráfico circular Donut interactivo con cuota de gasto y barras de consumo de presupuesto.
-- **Control Presupuestario (Budget vs Actual):** Detección de sobregastos con alertas visuales de desviación e indicadores de holgura.
-- **Tabla de Auditoría de Transacciones:** Tabla interactiva construida con TanStack Table v8, ordenación multicolumna y filtros.
-
----
-
-## 📊 Diagrama Entidad-Relación (MySQL 8.4 DDL)
+## 🏛️ Arquitectura y Modelo de Datos
 
 ```mermaid
 erDiagram
@@ -90,7 +73,18 @@ erDiagram
 
 ---
 
-## 🏛️ Arquitectura del Proyecto
+## ✨ Características Principales
+
+- **DRE Gerencial (Income Statement):** Estructura contable jerárquica con filas expandibles (Gross Revenue ➔ Deductions ➔ Net Revenue ➔ COGS ➔ Gross Profit ➔ OPEX ➔ EBITDA ➔ EBIT) con cálculo de variaciones nominales y porcentuales.
+- **Resumen Ejecutivo de KPIs:** Métricas en tiempo real de ingresos netos, gastos operativos (OPEX), margen EBITDA (45.4%), runway de caja y ritmo de crecimiento.
+- **Proyección de Flujo de Caja:** Gráfico de área dual en Recharts con saldo histórico y modelos predictivos a 30 días con filtros temporales.
+- **Desglose de Centros de Costo:** Gráfico circular Donut interactivo con cuota de gasto y barras de consumo de presupuesto.
+- **Control Presupuestario (Budget vs Actual):** Detección de sobregastos con alertas visuales de desviación e indicadores de holgura.
+- **Tabla de Auditoría de Transacciones:** Tabla interactiva construida con TanStack Table v8, ordenación multicolumna y filtros.
+
+---
+
+## 🗂️ Estructura del Proyecto
 
 ```text
 12-financial-dashboard/
@@ -101,9 +95,10 @@ erDiagram
 │   ├── stores/                    # Zustand store para tesorería y presupuestos
 │   ├── types/                     # Tipos TypeScript contables y financieros
 │   ├── App.tsx                    # Componente raíz
-│   └── main.tsx                   # Punto de entrada
-├── LICENSE
+│   └── main.tsx                   # Punto de entrada React 19
+├── tests/                         # Suite de pruebas unitarias Vitest
 ├── package.json
+├── tsconfig.json
 └── vite.config.ts
 ```
 
@@ -115,44 +110,40 @@ erDiagram
 - Node.js `>= 20.0.0`
 - npm `>= 10.0.0`
 
-### Pasos
+### Ejecución Local
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/alxnrocha/financial-dashboard.git
+cd financial-dashboard
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/alxnrocha/financial-dashboard.git
-   cd financial-dashboard
-   ```
+# 2. Instalar dependencias
+npm install
 
-2. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
+# 3. Iniciar servidor de desarrollo
+npm run dev
 
-3. **Ejecutar en modo desarrollo:**
-   ```bash
-   npm run dev
-   ```
+# 4. Ejecutar suite de pruebas unitarias (26 tests)
+npm test
 
-4. **Ejecutar suite de pruebas unitarias:**
-   ```bash
-   npm test
-   ```
-
-5. **Compilar para producción:**
-   ```bash
-   npm run build
-   ```
+# 5. Compilar para producción
+npm run build
+```
 
 ---
 
-## 🛡️ Calidad de Código & Testing
+## 🛠️ Tecnologías Utilizadas
 
-- **Pruebas Automatizadas:** 26 pruebas unitarias de reglas financieras con Vitest.
-- **Análisis Estático:** Cero errores y cero advertencias con Oxlint.
-- **Tipado Estricto:** TypeScript en modo estricto.
+| Capa | Tecnología | Aspectos Clave |
+|---|---|---|
+| **Framework** | React 19 | Hooks modernos, arquitectura modular por widgets financieros |
+| **Lenguaje** | TypeScript 5.8 | Tipado estricto para cuentas contables y balances |
+| **Estado Global** | Zustand 5.0 | Gestión reactiva de tesorería y presupuestos |
+| **Visualización** | Recharts 2.15 | Gráficos de flujo de caja y distribución por centros de costo |
+| **Testing** | Vitest | 26 pruebas unitarias de cálculo financiero y DRE |
+| **Despliegue** | GitHub Pages | Despliegue estático continuo y optimizado |
 
 ---
 
-## 📄 Licencia
-
-Este proyecto se encuentra bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+<div align="center">
+  <sub>Desarrollado con dedicación por <a href="https://github.com/alxnrocha">Alex Rocha</a> • Proyecto 12 del Portafolio Profesional Frontend.</sub>
+</div>
