@@ -1,3 +1,4 @@
+import { ProjectBadge } from './components/ProjectBadge';
 import { useState } from 'react'
 import {
   AccountsView,
@@ -149,6 +150,7 @@ function App() {
           onClose={() => setIsExportOpen(false)}
         />
       </div>
+          <ProjectBadge />
     </div>
   )
 }
